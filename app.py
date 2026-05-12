@@ -6,6 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = Flask(__name__)
 
 movies = pickle.load(open('movies.pkl', 'rb'))
+movies = movies.head(1000)
 
 cv = CountVectorizer(max_features=5000, stop_words='english')
 
